@@ -1,0 +1,14 @@
+body {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    font-family: var(--font-family-primary);
+    font-size: 16px;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
