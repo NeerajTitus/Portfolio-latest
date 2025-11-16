@@ -1,6 +1,5 @@
 .strap {
-    padding: 20px 10px;
-  
+    padding: 10px;
     &__one {
         position: absolute;
         bottom: 40%;
@@ -9,38 +8,37 @@
         color: var(--color-3);
         width: calc(100% + 200px);
         transform: rotate(-13deg);
+        @media (max-width: 1600px) {
+            bottom: 48%;
+        }
     }
-
     &__two {
         position: absolute;
         top: -17%;
         left: 3%;
-         background-color: var(--color-3);
+        background-color: var(--color-3);
         color: var(--color-2);
-       
         width: calc(100% + 227px);
         transform: rotate(33deg);
-
+        @media (max-width: 1600px) {
+            top: -10%;
+        }
     }
-
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
         transition-timing-function: linear;
         .swiper-slide {
-           
             text-align: center;
             font-size: 18px;
             padding: 0 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-
             &.dot {
                 position: relative;
                 height: auto;
-
                 &::after {
                     content: "";
                     position: absolute;
@@ -60,4 +58,26 @@
 .banner {
     position: relative;
     height: 100vh;
+    &__content {
+        h1 {
+            color: transparent;
+            font-size: 370px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: var(--color-5);
+        }
+        &-text {
+            position: absolute;
+            top: 22%;
+            left: 4%;
+            p {
+                font-size: 65px;
+                font-weight: 400;
+                span {
+                    &:not(:first-child) {
+                        color: var(--color-5);
+                    }
+                }
+            }
+        }
+    }
 }
