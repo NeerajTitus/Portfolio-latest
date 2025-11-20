@@ -91,3 +91,71 @@ document.addEventListener("mousemove", (e) => {
         }
     });
 });
+
+// Skills progress bar filling animation
+let skillsAnimated = false; // Flag to ensure animation runs only once
+
+function animateSkills() {
+    if (skillsAnimated) return; // Prevent multiple animations
+    skillsAnimated = true;
+
+    const skillsItems = document.querySelectorAll('.skills__item');
+
+    if (skillsItems.length === 0) return;
+
+    skillsItems.forEach((item, index) => {
+        const progress = item.querySelector('.progress');
+        const percentageElement = item.querySelector('h4');
+
+        if (!progress || !percentageElement) return;
+
+        // Extract target percentage from h4 text
+        const targetPercentage = parseInt(percentageElement.textContent.replace('%', ''));
+        const targetAngle = (targetPercentage / 100) * 360;
+
+        // Set initial state
+        progress.style.background = `conic-gradient(var(--color-1) 0deg, var(--color-5) 0deg)`;
+
+        // Create animation timeline
+        const tl = gsap.timeline({
+            delay: index * 0.2, // Stagger animation
+        });
+
+        // Animate the conic gradient angle
+        const angleObj = { angle: 0 };
+        const counter = { value: 0 };
+
+        tl.to([angleObj, counter], {
+            angle: targetAngle,
+            value: targetPercentage,
+            duration: 2,
+            ease: "power2.out",
+            onUpdate: function() {
+                // Update background gradient
+                progress.style.background = `conic-gradient(var(--color-1) ${Math.round(angleObj.angle)}deg, var(--color-5) 0deg)`;
+                // Update percentage text
+                percentageElement.textContent = Math.round(counter.value) + '%';
+            }
+        });
+    });
+}
+
+// Use Intersection Observer to trigger animation when scrolling to about section
+const aboutSection = document.querySelector('.about');
+if (aboutSection) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !skillsAnimated) {
+                // Small delay to ensure section is fully in view
+                setTimeout(() => {
+                    animateSkills();
+                }, 100);
+            }
+        });
+    }, {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+        rootMargin: '0px 0px -100px 0px' // Trigger slightly before fully visible
+    });
+
+    observer.observe(aboutSection);
+}
