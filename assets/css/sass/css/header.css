@@ -1,0 +1,112 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 80px;
+  position: sticky;
+  top: 0;
+  z-index: 13;
+  transition: all 0.2s ease;
+}
+@media (max-width: 991px) {
+  .header {
+    padding: 10px 20px;
+  }
+}
+.header__title {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+}
+@media (max-width: 991px) {
+  .header__title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .header__logo-image {
+    max-width: 100px;
+  }
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+@media (max-width: 991px) {
+  .header__menu {
+    gap: 20px;
+  }
+}
+.header__menu-button {
+  position: relative;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.header__menu-button span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--color-3);
+  margin: 6px 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.header__menu-button span:before, .header__menu-button span:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 3px;
+  background-color: var(--color-3);
+  transition: all 0.2s ease;
+}
+.header__menu-button span:before {
+  top: -10px;
+  transform: translateX(0);
+}
+.header__menu-button span:after {
+  top: 10px;
+  right: 0;
+}
+.header__menu-button:hover span:before {
+  transform: translateX(5px);
+  -webkit-transform: translateX(5px);
+  -moz-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  -o-transform: translateX(5px);
+}
+.header__menu-button:hover span:after {
+  transform: translateX(-5px);
+  -webkit-transform: translateX(-5px);
+  -moz-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  -o-transform: translateX(-5px);
+}
+.header.scrolled {
+  background-color: var(--color-6);
+  padding: 10px 80px;
+}
+@media (max-width: 991px) {
+  .header.scrolled {
+    padding: 5px 20px;
+  }
+}
+.header.scrolled .header__logo-image {
+  max-width: 150px;
+}
+@media (max-width: 991px) {
+  .header.scrolled .header__logo-image {
+    max-width: 100px;
+  }
+}
+.header.scrolled .btn {
+  padding: 8px 25px;
+}
+@media (max-width: 991px) {
+  .header.scrolled .btn {
+    padding: 5px 15px;
+  }
+}

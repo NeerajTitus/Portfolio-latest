@@ -1,0 +1,13 @@
+.contact_wrapper {
+  text-align: center;
+  padding-bottom: 150px;
+}
+.contact_wrapper h3 {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: var(--font-family-secondary);
+}
+.contact_wrapper .btn {
+  margin-top: 10px;
+}

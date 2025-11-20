@@ -1,5 +1,8 @@
 .strap {
     padding: 10px;
+    @media (max-width: 991px) {
+        display: none;
+    }
     &__one {
         position: absolute;
         bottom: 40%;
@@ -58,23 +61,47 @@
 .banner {
     position: relative;
     height: 100vh;
+    @media (max-width: 991px) {
+        height: 50vh;
+    }
     &__content {
+        @media (max-width: 991px) {
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
         h1 {
             color: transparent;
             font-size: 370px;
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: var(--color-5);
+            @media (max-width: 991px) {
+                font-size: 200px;
+            }
         }
         &-text {
             position: absolute;
             top: 22%;
             left: 4%;
+            @media (max-width: 991px) {
+                top: 10%;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
             p {
                 font-size: 65px;
                 font-weight: 400;
+                @media (max-width: 991px) {
+                    font-size: 30px;
+                }
                 span {
-                    &:not(:first-child) {
-                        color: var(--color-5);
+                    color: var(--color-5);
+                    transition: color 0.2s ease;
+                    &.active {
+                        color: var(--color-3);
                     }
                 }
             }

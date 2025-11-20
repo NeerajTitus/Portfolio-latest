@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 200px;
+}
+
 body {
     background-color: var(--color-2);
     color: var(--color-3);
@@ -19,7 +24,7 @@ body {
     position: fixed;
     top: 25%;
     left: 20px;
-    z-index: 1;
+    z-index: 5;
     &__list {
         display: inline-flex;
         flex-direction: column;
@@ -74,5 +79,44 @@ body {
     100% {
         fill: var(--color-1);
         clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+    }
+}
+
+
+/******************/
+
+.scroll-down {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    .box span {
+        width: 20px;
+        height: 20px;
+        display: block;
+        border-right: 2px solid var(--color-3);
+        border-bottom: 2px solid var(--color-3);
+        transform: rotate(45deg);
+        margin: -10px;
+        animation: animate 2s infinite;
+    }
+    .box span:nth-child(2) {
+        animation-delay: -0.2s;
+    }
+    .box span:nth-child(3) {
+        animation-delay: -0.4s;
+    }
+    @keyframes animate {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+        100% {
+            opacity: 0;
+        }
     }
 }

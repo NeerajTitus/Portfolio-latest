@@ -28,11 +28,11 @@
         <div class="header__menu">
             <a href="#" class="btn header__btn">Hire Me</a>
 
-            <div class="header__menu-button">
+            <!-- <div class="header__menu-button">
                 <a href="#" class="header__menu-icon">
                     <span class="header__menu-icon-span"></span>
                 </a>
-            </div>
+            </div> -->
         </div>
     </header>
     <main>
@@ -55,16 +55,6 @@
                     </a>
                 </li>
 
-                <!-- Facebook -->
-                <li class="social-icons__item">
-                    <a href="#" class="social-icons__link" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
-                        <svg class="social-icons__icon" xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none" role="img" aria-hidden="true">
-                            <path
-                                d="M19.5 0C8.73054 0 0 8.50668 0 19C0 27.9102 6.29616 35.3871 14.7896 37.4406V24.8064H10.7687V19H14.7896V16.4981C14.7896 10.0312 17.7934 7.0338 24.3095 7.0338C25.545 7.0338 27.6767 7.27016 28.5488 7.50576V12.7688C28.0886 12.7216 27.2891 12.6981 26.2961 12.6981C23.0989 12.6981 21.8634 13.8784 21.8634 16.9465V19H28.2329L27.1385 24.8064H21.8634V37.8609C31.519 36.7247 39.0008 28.7143 39.0008 19C39 8.50668 30.2695 0 19.5 0Z"
-                                fill="white" />
-                        </svg>
-                    </a>
-                </li>
 
                 <!-- Instagram -->
                 <li class="social-icons__item">
@@ -96,7 +86,7 @@
                 <li class="social-icons__item">
                     <a href="#" class="social-icons__link" aria-label="Google" title="Google" target="_blank" rel="noopener noreferrer">
                         <svg class="social-icons__icon" xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none" role="img" aria-hidden="true">
-                            <path
+                            <path   
                                 d="M19.5 15.5V23H30C29.5 25.5 28 27.5 26 29L32.5 34C36 30.5 38 25.5 38 19.5C38 18 37.9 16.5 37.7 15.5H19.5Z"
                                 fill="white" />
                             <path
@@ -238,15 +228,22 @@
                 <div class="container">
                     <h1>hi</h1>
                     <div class="banner__content-text">
-                        <p><span>code</span>. <span>build</span>. <span>deploy</span>.</p>
+                        <p><span class="active">code</span>. <span>build</span>. <span>deploy</span>.</p>
                         <p>zero to prod</p>
                         <p>no shortcuts.</p>
                     </div>
                 </div>
 
             </div>
+            <a href="#about" class="scroll-down">
+                <div class="box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="container">
                 <div class="common_header">
                     <div class="letter">
@@ -461,6 +458,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 

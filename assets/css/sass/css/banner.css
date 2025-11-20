@@ -1,0 +1,122 @@
+.strap {
+  padding: 10px;
+}
+@media (max-width: 991px) {
+  .strap {
+    display: none;
+  }
+}
+.strap__one {
+  position: absolute;
+  bottom: 40%;
+  left: -2%;
+  background-color: var(--color-4);
+  color: var(--color-3);
+  width: calc(100% + 200px);
+  transform: rotate(-13deg);
+}
+@media (max-width: 1600px) {
+  .strap__one {
+    bottom: 48%;
+  }
+}
+.strap__two {
+  position: absolute;
+  top: -17%;
+  left: 3%;
+  background-color: var(--color-3);
+  color: var(--color-2);
+  width: calc(100% + 227px);
+  transform: rotate(33deg);
+}
+@media (max-width: 1600px) {
+  .strap__two {
+    top: -10%;
+  }
+}
+.strap ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition-timing-function: linear;
+}
+.strap ul .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.strap ul .swiper-slide.dot {
+  position: relative;
+  height: auto;
+}
+.strap ul .swiper-slide.dot::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner {
+  position: relative;
+  height: 100vh;
+}
+@media (max-width: 991px) {
+  .banner {
+    height: 50vh;
+  }
+}
+@media (max-width: 991px) {
+  .banner__content .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.banner__content h1 {
+  color: transparent;
+  font-size: 370px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-5);
+}
+@media (max-width: 991px) {
+  .banner__content h1 {
+    font-size: 200px;
+  }
+}
+.banner__content-text {
+  position: absolute;
+  top: 22%;
+  left: 4%;
+}
+@media (max-width: 991px) {
+  .banner__content-text {
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+.banner__content-text p {
+  font-size: 65px;
+  font-weight: 400;
+}
+@media (max-width: 991px) {
+  .banner__content-text p {
+    font-size: 30px;
+  }
+}
+.banner__content-text p span {
+  color: var(--color-5);
+  transition: color 0.2s ease;
+}
+.banner__content-text p span.active {
+  color: var(--color-3);
+}

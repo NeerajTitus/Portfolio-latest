@@ -1,0 +1,117 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px;
+}
+
+body {
+  background-color: var(--color-2);
+  color: var(--color-3);
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.social-icons {
+  display: inline-block;
+  position: fixed;
+  top: 25%;
+  left: 20px;
+  z-index: 5;
+}
+.social-icons__list {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+}
+.social-icons__list li {
+  opacity: 0.7;
+}
+.social-icons__list li svg {
+  max-width: 30px;
+}
+.social-icons__list li svg path {
+  fill: white;
+  transition: fill 0.3s ease;
+}
+.social-icons__list li svg circle {
+  stroke: white;
+  stroke-width: 3;
+  transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease;
+}
+.social-icons__list li svg rect {
+  stroke: white;
+  stroke-width: 3;
+  fill: none;
+  transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease;
+}
+.social-icons__list li:hover {
+  opacity: 1;
+}
+.social-icons__list li:hover svg path {
+  fill: var(--color-1);
+  animation: fillUp 0.6s ease forwards;
+}
+.social-icons__list li:hover svg circle {
+  stroke: var(--color-1);
+  stroke-dashoffset: 0;
+}
+.social-icons__list li:hover svg rect {
+  stroke: var(--color-1);
+  stroke-dashoffset: 0;
+}
+
+@keyframes fillUp {
+  0% {
+    fill: white;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  100% {
+    fill: var(--color-1);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+  }
+}
+/******************/
+.scroll-down {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.scroll-down .box span {
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-right: 2px solid var(--color-3);
+  border-bottom: 2px solid var(--color-3);
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+.scroll-down .box span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+.scroll-down .box span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}

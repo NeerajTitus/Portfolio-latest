@@ -7,15 +7,30 @@
     padding: 20px 80px;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 13;
+    transition: all 0.2s ease;
+    @media (max-width: 991px) {
+        padding: 10px 20px;
+    }
     &__title {
         font-family: "Playfair Display", serif;
         font-size: 30px;
+        @media (max-width: 991px) {
+            font-size: 20px;
+        }
+    }
+    &__logo-image {
+        @media (max-width: 991px) {
+            max-width: 100px;
+        }
     }
     &__menu {
         display: flex;
         align-items: center;
         gap: 50px;
+        @media (max-width: 991px) {
+            gap: 20px;
+        }
     }
     &__menu-button {
         position: relative;
@@ -29,7 +44,7 @@
             height: 3px;
             background-color: var(--color-3);
             margin: 6px 0;
-            transition: all 2s ease;
+            transition: all 0.2s ease;
             position: relative;
             &:before,
             &:after {
@@ -38,10 +53,11 @@
                 width: 18px;
                 height: 3px;
                 background-color: var(--color-3);
-                transition: all 2s ease;
+                transition: all 0.2s ease;
             }
             &:before {
                 top: -10px;
+                transform: translateX(0);
             }
             &:after {
                 top: 10px;
@@ -51,11 +67,38 @@
         &:hover {
             span {
                 &:before {
-                    right: 0;
+                    transform: translateX(5px);
+                    -webkit-transform: translateX(5px);
+                    -moz-transform: translateX(5px);
+                    -ms-transform: translateX(5px);
+                    -o-transform: translateX(5px);
                 }
                 &:after {
-                    left: 0;
+                    transform: translateX(-5px);
+                    -webkit-transform: translateX(-5px);
+                    -moz-transform: translateX(-5px);
+                    -ms-transform: translateX(-5px);
+                    -o-transform: translateX(-5px);
                 }
+            }
+        }
+    }
+    &.scrolled {
+        background-color: var(--color-6);
+        padding: 10px 80px;
+        @media (max-width: 991px) {
+            padding: 5px 20px;
+        }
+        .header__logo-image {
+            max-width: 150px;
+            @media (max-width: 991px) {
+                max-width: 100px;
+            }
+        }
+        .btn {
+            padding: 8px 25px;
+            @media (max-width: 991px) {
+                padding: 5px 15px;
             }
         }
     }
