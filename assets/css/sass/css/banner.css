@@ -98,10 +98,11 @@
 }
 @media (max-width: 991px) {
   .banner__content-text {
-    top: 10%;
+    top: 26%;
     left: 0;
     right: 0;
     margin: 0 auto;
+    text-align: center;
   }
 }
 .banner__content-text p {
